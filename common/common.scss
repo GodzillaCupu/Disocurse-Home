@@ -157,6 +157,16 @@
   z-index: 1;
 }
 
+/* Maskot Logic (biru berkacamata) - kecil, mengintip dari bawah */
+.gc-hero__mascot-communication {
+  width: 120px;
+  height: auto;
+  left: +10px;
+  bottom: -10px;
+  transform: rotate(4deg);
+  z-index: 1;
+}
+
 /* ===== BUTTONS ===== */
 .gc-btn {
   display: inline-flex;
