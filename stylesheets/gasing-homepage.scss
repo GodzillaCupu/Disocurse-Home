@@ -34,6 +34,21 @@
 @import url("https://fonts.googleapis.com/css2?family=Nunito:wght@400;500;600;700;800&family=Poppins:wght@600;700;800&display=swap");
 
 /* --- Hide default Discourse content when custom homepage is active --- */
+
+// Menyembunyikan Header Discourse
+.d-header {
+  display: none !important;
+}
+
+// Menghapus padding atas bawaan Discourse agar hero banner naik ke paling atas
+#main-outlet-wrapper {
+  padding-top: 0 !important;
+}
+
+#main-outlet {
+  padding-top: 0 !important;
+}
+
 .custom-homepage-wrapper {
   width: 100%;
 }
