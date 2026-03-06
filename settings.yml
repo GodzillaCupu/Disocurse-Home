@@ -27,8 +27,3 @@ materi_category_slug:
   type: string
   default: "materi-gasing"
   description: "Slug kategori untuk section materi"
-
-headerless:
-  fullscreen_layout_enable:
-  default: true;
-  client: true;

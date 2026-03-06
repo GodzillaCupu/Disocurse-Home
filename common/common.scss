@@ -145,12 +145,6 @@
   top: -30px;
   transform: rotate(5deg);
   z-index: 2;
-
-  /* PEMANGGILAN GAMBAR */
-  background-image: url($mascot_logic);
-  background-size: contain;
-  background-repeat: no-repeat;
-  background-position: center bottom;
 }
 
 /* Maskot Logic (biru berkacamata) - kecil, mengintip dari bawah */
@@ -161,28 +155,6 @@
   bottom: -10px;
   transform: rotate(-8deg);
   z-index: 1;
-
-  /* PEMANGGILAN GAMBAR */
-  background-image: url($mascot_communication);
-  background-size: contain;
-  background-repeat: no-repeat;
-  background-position: center bottom;
-}
-
-/* Maskot Creativity (ungu) - besar, posisi utama di kiri */
-.gc-hero__mascot-communication {
-  width: 120px;
-  height: auto;
-  right: 20px;
-  top: -30px;
-  transform: rotate(-5deg);
-  z-index: 2;
-
-  /* PEMANGGILAN GAMBAR */
-  background-image: url($mascot_creativity);
-  background-size: contain;
-  background-repeat: no-repeat;
-  background-position: center bottom;
 }
 
 /* ===== BUTTONS ===== */
@@ -512,7 +484,7 @@
 
 .gc-meetup__event-info {
   padding: 10px 12px;
-  background: linear-gradient(to top, rgba(0, 0, 0, 0.8), rgba(0, 0, 0, 0));
+  background: linear-gradient(to top, rgba(0,0,0,0.8), rgba(0,0,0,0.0));
   position: absolute;
   bottom: 0;
   left: 0;
@@ -662,9 +634,7 @@
 }
 
 @keyframes gc-spin {
-  to {
-    transform: rotate(360deg);
-  }
+  to { transform: rotate(360deg); }
 }
 
 /* ===== RESPONSIVE ===== */
