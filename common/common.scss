@@ -31,12 +31,18 @@
 
 /* Hide default Discourse elements on custom homepage */
 .custom-homepage {
+  // Menyembunyikan Header Discourse
   .d-header {
     display: none !important;
   }
 
+  // Menghapus padding atas bawaan Discourse agar hero banner naik ke paling atas
   #main-outlet-wrapper {
-    padding-top: 0;
+    padding-top: 0 !important;
+  }
+
+  #main-outlet {
+    padding-top: 0 !important;
   }
 }
 
