@@ -7,6 +7,7 @@ import { ajax } from "discourse/lib/ajax";
 export default class GasingHomepage extends Component {
   @service currentUser;
   @service router;
+  @service siteSettings;
 
   @tracked trendingTopics = [];
   @tracked latestTopics = [];
@@ -72,7 +73,6 @@ export default class GasingHomepage extends Component {
         this.latestTopics = this.mapTopics(latestRes.value.topic_list.topics.slice(0, 5));
       }
 
-      // Optional category fetches - these might fail if categories don't exist
       const [newsRes, materiRes] = await Promise.allSettled([
         ajax("/c/gasing-academy-news/l/latest.json?per_page=3"),
         ajax("/c/materi-gasing/l/latest.json?per_page=5"),
@@ -86,7 +86,6 @@ export default class GasingHomepage extends Component {
         this.materiTopics = this.mapTopics(materiRes.value.topic_list.topics.slice(0, 5));
       }
     } catch (e) {
-      // eslint-disable-next-line no-console
       console.error("GasingHomepage: Error loading data", e);
     } finally {
       this.isLoading = false;

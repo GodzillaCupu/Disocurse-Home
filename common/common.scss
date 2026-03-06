@@ -121,18 +121,40 @@
   font-size: 14px;
 }
 
-.gc-hero__mascot {
+/* Hero Mascots Container */
+.gc-hero__mascots {
+  position: relative;
   flex-shrink: 0;
-  width: 200px;
-  height: 160px;
+  width: 280px;
+  height: 200px;
   z-index: 1;
 }
 
-.gc-hero__mascot-placeholder {
-  width: 100%;
-  height: 100%;
-  background: rgba(255, 255, 255, 0.12);
-  border-radius: var(--gc-radius);
+.gc-hero__mascot-img {
+  position: absolute;
+  object-fit: contain;
+  filter: drop-shadow(0 4px 12px rgba(0, 0, 0, 0.15));
+  pointer-events: none;
+}
+
+/* Maskot Creativity (ungu) - besar, posisi utama di kanan */
+.gc-hero__mascot-creativity {
+  width: 220px;
+  height: auto;
+  right: -20px;
+  top: -30px;
+  transform: rotate(5deg);
+  z-index: 2;
+}
+
+/* Maskot Logic (biru berkacamata) - kecil, mengintip dari bawah */
+.gc-hero__mascot-logic {
+  width: 120px;
+  height: auto;
+  left: -10px;
+  bottom: -10px;
+  transform: rotate(-8deg);
+  z-index: 1;
 }
 
 /* ===== BUTTONS ===== */
@@ -539,10 +561,27 @@
   padding: 0 !important;
 }
 
-.gc-minigame__img-placeholder {
+.gc-minigame__illustration {
   width: 100%;
-  height: 200px;
+  height: 220px;
   background: linear-gradient(135deg, #34d399, #059669, #047857);
+  display: flex;
+  align-items: center;
+  justify-content: center;
+  overflow: hidden;
+  position: relative;
+}
+
+.gc-minigame__mascot {
+  width: 180px;
+  height: auto;
+  object-fit: contain;
+  filter: drop-shadow(0 4px 16px rgba(0, 0, 0, 0.2));
+  transition: transform 0.3s ease;
+}
+
+.gc-minigame:hover .gc-minigame__mascot {
+  transform: scale(1.05) rotate(3deg);
 }
 
 .gc-minigame__content {
@@ -615,10 +654,20 @@
     justify-content: center;
     flex-wrap: wrap;
   }
-  .gc-hero__mascot {
-    width: 140px;
-    height: 110px;
+  .gc-hero__mascots {
+    width: 200px;
+    height: 150px;
     margin-top: 16px;
+  }
+  .gc-hero__mascot-creativity {
+    width: 160px;
+    right: 0;
+    top: -10px;
+  }
+  .gc-hero__mascot-logic {
+    width: 90px;
+    left: 0;
+    bottom: 0;
   }
   .gc-meetup__cards {
     grid-template-columns: 1fr;

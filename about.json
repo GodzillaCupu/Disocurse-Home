@@ -5,7 +5,11 @@
   "component": true,
   "minimum_discourse_version": "3.1.0",
   "maximum_discourse_version": null,
-  "assets": {},
+  "assets": {
+    "mascot_logic": "assets/mascot-logic.png",
+    "mascot_communication": "assets/mascot-communication.png",
+    "mascot_creativity": "assets/mascot-creativity.png"
+  },
   "color_schemes": {},
   "modifiers": {
     "custom_homepage": true
