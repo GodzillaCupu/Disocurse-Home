@@ -1,29 +1,19 @@
+hero_greeting:
+  type: string
+  default: "Selamat Datang"
+
 hero_cta_text:
   type: string
   default: "Apa kamu mau daftar menjadi Trainer di pelatihan Gasing tanggal 5-20 Maret 2026?"
-  description: "Teks CTA di hero banner"
-
-hero_cta_link:
-  type: string
-  default: "/t/pendaftaran-trainer"
-  description: "Link tombol CTA di hero banner"
 
 hero_cta_button_text:
   type: string
   default: "Saya daftar!"
-  description: "Teks tombol CTA"
 
-hero_register_count:
+hero_cta_link:
+  type: string
+  default: "/t/pendaftaran-trainer"
+
+hero_cta_count_text:
   type: string
   default: "50 guru mendaftar"
-  description: "Teks jumlah pendaftar"
-
-news_category_slug:
-  type: string
-  default: "gasing-academy-news"
-  description: "Slug kategori untuk section berita"
-
-materi_category_slug:
-  type: string
-  default: "materi-gasing"
-  description: "Slug kategori untuk section materi"

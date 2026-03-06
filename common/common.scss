@@ -157,16 +157,6 @@
   z-index: 1;
 }
 
-/* Maskot Logic (biru berkacamata) - kecil, mengintip dari bawah */
-.gc-hero__mascot-communication {
-  width: 120px;
-  height: auto;
-  left: +10px;
-  bottom: -10px;
-  transform: rotate(4deg);
-  z-index: 1;
-}
-
 /* ===== BUTTONS ===== */
 .gc-btn {
   display: inline-flex;
@@ -494,7 +484,7 @@
 
 .gc-meetup__event-info {
   padding: 10px 12px;
-  background: linear-gradient(to top, rgba(0, 0, 0, 0.8), rgba(0, 0, 0, 0));
+  background: linear-gradient(to top, rgba(0,0,0,0.8), rgba(0,0,0,0.0));
   position: absolute;
   bottom: 0;
   left: 0;
@@ -582,6 +572,18 @@
   position: relative;
 }
 
+.gc-minigame__mascot {
+  width: 180px;
+  height: auto;
+  object-fit: contain;
+  filter: drop-shadow(0 4px 16px rgba(0, 0, 0, 0.2));
+  transition: transform 0.3s ease;
+}
+
+.gc-minigame:hover .gc-minigame__mascot {
+  transform: scale(1.05) rotate(3deg);
+}
+
 .gc-minigame__content {
   padding: 20px 24px 24px;
   text-align: center;
@@ -632,9 +634,7 @@
 }
 
 @keyframes gc-spin {
-  to {
-    transform: rotate(360deg);
-  }
+  to { transform: rotate(360deg); }
 }
 
 /* ===== RESPONSIVE ===== */
@@ -665,11 +665,6 @@
     top: -10px;
   }
   .gc-hero__mascot-logic {
-    width: 90px;
-    left: 0;
-    bottom: 0;
-  }
-  .gc-hero__mascot-communication {
     width: 90px;
     left: 0;
     bottom: 0;

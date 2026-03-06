@@ -1,16 +1,14 @@
 {
   "name": "Gasing Community Homepage",
-  "about_url": "",
-  "license_url": "",
+  "about_url": "https://github.com/gasing-community/homepage-theme",
+  "license_url": "https://github.com/gasing-community/homepage-theme/blob/main/LICENSE",
   "component": true,
   "minimum_discourse_version": "3.1.0",
-  "maximum_discourse_version": null,
   "assets": {
     "mascot_logic": "assets/mascot-logic.svg",
     "mascot_communication": "assets/mascot-communication.svg",
     "mascot_creativity": "assets/mascot-creativity.svg"
   },
-  "color_schemes": {},
   "modifiers": {
     "custom_homepage": true
   }
