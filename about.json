@@ -6,9 +6,9 @@
   "minimum_discourse_version": "3.1.0",
   "maximum_discourse_version": null,
   "assets": {
-    "mascot_logic": "assets/mascot-logic.png",
-    "mascot_communication": "assets/mascot-communication.png",
-    "mascot_creativity": "assets/mascot-creativity.png"
+    "mascot_logic": "assets/mascot-logic.svg",
+    "mascot_communication": "assets/mascot-communication.svg",
+    "mascot_creativity": "assets/mascot-creativity.svg"
   },
   "color_schemes": {},
   "modifiers": {
