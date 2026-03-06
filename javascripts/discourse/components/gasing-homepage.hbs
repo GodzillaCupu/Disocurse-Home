@@ -1,0 +1,274 @@
+<div class="gc-homepage">
+  {{!-- ===== HERO BANNER ===== --}}
+  <section class="gc-hero">
+    <div class="gc-hero__content">
+      <h1 class="gc-hero__greeting">
+        Selamat Datang{{#if this.isLoggedIn}}, {{this.displayName}}{{/if}}!
+      </h1>
+      <div class="gc-hero__cta-card">
+        <p class="gc-hero__cta-text">
+          Apa kamu mau daftar menjadi Trainer di pelatihan Gasing tanggal 5-20 Maret 2026?
+        </p>
+        <div class="gc-hero__cta-actions">
+          <a href="/t/pendaftaran-trainer" class="gc-btn gc-btn--primary">
+            Saya daftar!
+            <svg width="14" height="14" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2.5">
+              <polyline points="6 9 12 15 18 9"></polyline>
+            </svg>
+          </a>
+          <span class="gc-hero__cta-count">50 guru mendaftar</span>
+        </div>
+      </div>
+    </div>
+    <div class="gc-hero__mascot">
+      {{!-- Mascot illustration placeholder - replace with your asset --}}
+      <div class="gc-hero__mascot-placeholder"></div>
+    </div>
+  </section>
+
+  {{!-- ===== MAIN GRID ===== --}}
+  <div class="gc-grid">
+    {{!-- LEFT COLUMN --}}
+    <div class="gc-grid__left">
+
+      {{!-- EXCLUSIVE CONTENT --}}
+      <section class="gc-card gc-exclusive">
+        <div class="gc-exclusive__badge">Feb 2026</div>
+        <h2 class="gc-card__title">Eksklusif Konten</h2>
+        <p class="gc-exclusive__desc">
+          Yuk belajar trik perkalian 2 digit, dan dapatkan soal-soal penjumlahan &lt;5.
+        </p>
+        <div class="gc-exclusive__illustration">
+          {{!-- Fun Math Trick illustration placeholder --}}
+          <div class="gc-exclusive__img-placeholder">
+            <span>Fun Math Trick for Kids</span>
+          </div>
+        </div>
+      </section>
+
+      {{!-- KOMUNITAS / FORUM --}}
+      <section class="gc-card gc-komunitas">
+        <div class="gc-card__header">
+          <h2 class="gc-card__title">Ada Apa di Komunitas Gasing?</h2>
+          <a href="/latest" class="gc-card__more" title="Lihat semua">
+            <svg width="20" height="20" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2">
+              <polyline points="9 18 15 12 9 6"></polyline>
+            </svg>
+          </a>
+        </div>
+
+        <div class="gc-tabs">
+          <button
+            class="gc-tabs__tab {{if (eq this.activeTab 'trending') 'gc-tabs__tab--active'}}"
+            type="button"
+            {{on "click" (fn this.switchTab "trending")}}
+          >
+            Trending
+          </button>
+          <button
+            class="gc-tabs__tab {{if (eq this.activeTab 'latest') 'gc-tabs__tab--active'}}"
+            type="button"
+            {{on "click" (fn this.switchTab "latest")}}
+          >
+            Latest
+          </button>
+        </div>
+
+        <div class="gc-topic-list">
+          {{#if this.isLoading}}
+            <div class="gc-loading">
+              <div class="gc-loading__spinner"></div>
+              <span>Memuat...</span>
+            </div>
+          {{else}}
+            {{#each (if (eq this.activeTab "trending") this.trendingTopics this.latestTopics) as |topic|}}
+              <a href="/t/{{topic.slug}}/{{topic.id}}" class="gc-topic-item">
+                <div class="gc-topic-item__avatar">
+                  <div class="gc-topic-item__avatar-placeholder"></div>
+                </div>
+                <div class="gc-topic-item__content">
+                  <h3 class="gc-topic-item__title">{{topic.title}}</h3>
+                  <div class="gc-topic-item__meta">
+                    <span class="gc-topic-item__age">
+                      <svg width="12" height="12" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2">
+                        <polyline points="15 10 20 15 15 20"></polyline>
+                        <path d="M4 4v7a4 4 0 0 0 4 4h12"></path>
+                      </svg>
+                      baru saja
+                    </span>
+                  </div>
+                  <div class="gc-topic-item__stats">
+                    {{#each topic.tags as |tag|}}
+                      <span class="gc-tag">{{tag}}</span>
+                    {{/each}}
+                    <span class="gc-topic-item__likes">
+                      <svg width="14" height="14" viewBox="0 0 24 24" fill="currentColor">
+                        <path d="M20.84 4.61a5.5 5.5 0 0 0-7.78 0L12 5.67l-1.06-1.06a5.5 5.5 0 0 0-7.78 7.78l1.06 1.06L12 21.23l7.78-7.78 1.06-1.06a5.5 5.5 0 0 0 0-7.78z"></path>
+                      </svg>
+                      {{topic.likeCount}}
+                    </span>
+                    <span class="gc-topic-item__replies">
+                      <svg width="14" height="14" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2">
+                        <path d="M21 15a2 2 0 0 1-2 2H7l-4 4V5a2 2 0 0 1 2-2h14a2 2 0 0 1 2 2z"></path>
+                      </svg>
+                      {{topic.replyCount}}
+                    </span>
+                  </div>
+                </div>
+              </a>
+            {{/each}}
+          {{/if}}
+        </div>
+      </section>
+
+      {{!-- AYO BELAJAR GASING BERSAMA --}}
+      <section class="gc-card gc-belajar">
+        <div class="gc-card__header">
+          <h2 class="gc-card__title">Ayo Belajar Gasing Bersama!</h2>
+          <a href="/c/materi-gasing" class="gc-card__more" title="Lihat semua">
+            <svg width="20" height="20" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2">
+              <polyline points="9 18 15 12 9 6"></polyline>
+            </svg>
+          </a>
+        </div>
+
+        <span class="gc-belajar__label">Latest</span>
+
+        <div class="gc-topic-list">
+          {{#if this.isLoading}}
+            <div class="gc-loading">
+              <div class="gc-loading__spinner"></div>
+            </div>
+          {{else}}
+            {{#each this.materiTopics as |topic|}}
+              <a href="/t/{{topic.slug}}/{{topic.id}}" class="gc-topic-item">
+                <div class="gc-topic-item__avatar">
+                  <div class="gc-topic-item__avatar-placeholder"></div>
+                </div>
+                <div class="gc-topic-item__content">
+                  <h3 class="gc-topic-item__title">{{topic.title}}</h3>
+                  <div class="gc-topic-item__meta">
+                    <span class="gc-topic-item__age">
+                      <svg width="12" height="12" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2">
+                        <polyline points="15 10 20 15 15 20"></polyline>
+                        <path d="M4 4v7a4 4 0 0 0 4 4h12"></path>
+                      </svg>
+                      baru saja
+                    </span>
+                  </div>
+                  <div class="gc-topic-item__stats">
+                    {{#each topic.tags as |tag|}}
+                      <span class="gc-tag">{{tag}}</span>
+                    {{/each}}
+                    <span class="gc-topic-item__likes">
+                      <svg width="14" height="14" viewBox="0 0 24 24" fill="currentColor">
+                        <path d="M20.84 4.61a5.5 5.5 0 0 0-7.78 0L12 5.67l-1.06-1.06a5.5 5.5 0 0 0-7.78 7.78l1.06 1.06L12 21.23l7.78-7.78 1.06-1.06a5.5 5.5 0 0 0 0-7.78z"></path>
+                      </svg>
+                      {{topic.likeCount}}
+                    </span>
+                    <span class="gc-topic-item__replies">
+                      <svg width="14" height="14" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2">
+                        <path d="M21 15a2 2 0 0 1-2 2H7l-4 4V5a2 2 0 0 1 2-2h14a2 2 0 0 1 2 2z"></path>
+                      </svg>
+                      {{topic.replyCount}}
+                    </span>
+                  </div>
+                </div>
+              </a>
+            {{/each}}
+          {{/if}}
+        </div>
+      </section>
+    </div>
+
+    {{!-- RIGHT COLUMN --}}
+    <div class="gc-grid__right">
+
+      {{!-- VIRTUAL MEET-UP --}}
+      <section class="gc-card gc-meetup">
+        <div class="gc-card__header">
+          <h2 class="gc-card__title gc-card__title--italic">Virtual Meet-Up Selanjutnya</h2>
+          <a href="/c/virtual-meetup" class="gc-card__more" title="Lihat semua">
+            <svg width="20" height="20" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2">
+              <polyline points="9 18 15 12 9 6"></polyline>
+            </svg>
+          </a>
+        </div>
+        <div class="gc-meetup__cards">
+          <div class="gc-meetup__event">
+            <div class="gc-meetup__event-img"></div>
+            <div class="gc-meetup__event-overlay">
+              <span class="gc-btn gc-btn--success gc-btn--sm">Saya ikut</span>
+            </div>
+            <div class="gc-meetup__event-info">
+              <h3>Q&A Challenge</h3>
+              <span>Feb 12 · 17:00 - 18:00 WIB</span>
+            </div>
+          </div>
+          <div class="gc-meetup__event">
+            <div class="gc-meetup__event-img"></div>
+            <div class="gc-meetup__event-overlay">
+              <span class="gc-btn gc-btn--outline gc-btn--sm">Daftar</span>
+            </div>
+            <div class="gc-meetup__event-info">
+              <h3>Townhall Feb 2026</h3>
+              <span>Feb 12 · 17:00 - 18:00 WIB</span>
+            </div>
+          </div>
+        </div>
+      </section>
+
+      {{!-- GASING ACADEMY NEWS --}}
+      <section class="gc-card gc-news">
+        <div class="gc-card__header">
+          <h2 class="gc-card__title">Gasing Academy News</h2>
+          <a href="/c/gasing-academy-news" class="gc-card__more" title="Lihat semua">
+            <svg width="20" height="20" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2">
+              <polyline points="9 18 15 12 9 6"></polyline>
+            </svg>
+          </a>
+        </div>
+        <div class="gc-news__list">
+          {{#each this.newsTopics as |news|}}
+            <a href="/t/{{news.slug}}/{{news.id}}" class="gc-news__item">
+              <div class="gc-news__thumb"></div>
+              <div class="gc-news__content">
+                <h3 class="gc-news__title">{{news.title}}</h3>
+                <span class="gc-news__date">20 Februari 2026 · 5-min read</span>
+              </div>
+            </a>
+          {{else}}
+            <div class="gc-news__item">
+              <div class="gc-news__thumb"></div>
+              <div class="gc-news__content">
+                <h3 class="gc-news__title">Murid GIP 2026 Mulai Berlatih Untuk Olimpiade Matematika</h3>
+                <span class="gc-news__date">20 Februari 2026 · 5-min read</span>
+              </div>
+            </div>
+            <div class="gc-news__item">
+              <div class="gc-news__thumb"></div>
+              <div class="gc-news__content">
+                <h3 class="gc-news__title">Pelatihan Bakalkubagi Soe, NTT</h3>
+                <span class="gc-news__date">20 Februari 2026 · 5-min read</span>
+              </div>
+            </div>
+          {{/each}}
+        </div>
+      </section>
+
+      {{!-- MINI GAME WIDGET --}}
+      <section class="gc-card gc-minigame">
+        <div class="gc-minigame__illustration">
+          {{!-- Frog & Lily Pad illustration placeholder --}}
+          <div class="gc-minigame__img-placeholder"></div>
+        </div>
+        <div class="gc-minigame__content">
+          <span class="gc-tag gc-tag--green">Computational Logic</span>
+          <h2 class="gc-minigame__title">Katak dan Daun Teratai</h2>
+          <p class="gc-minigame__desc">Perhatikan dan ingatlah urutan daun teratai yg muncul</p>
+          <a href="/t/katak-dan-daun-teratai" class="gc-btn gc-btn--game">Ayo Main!</a>
+        </div>
+      </section>
+    </div>
+  </div>
+</div>
