@@ -188,6 +188,24 @@ body.sidebar-animate .wrap {
   z-index: 1;
 }
 
+.gc-hero__mascot-communication {
+  width: 120px;
+  height: auto;
+  left: 10px;
+  bottom: -10px;
+  transform: rotate(8deg);
+  z-index: 1;
+}
+
+.gc-hero__mascot-logic {
+  width: 120px;
+  height: auto;
+  left: -10px;
+  bottom: -10px;
+  transform: rotate(-8deg);
+  z-index: 1;
+}
+
 /* ===== BUTTONS ===== */
 .gc-btn {
   display: inline-flex;
