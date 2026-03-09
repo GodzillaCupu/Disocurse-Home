@@ -1,5 +1,5 @@
 /* ============================================
-   GASING COMMUNITY HOMEPAGE
+   GASING COMMUNITY HOMEPAGE — v5
    ============================================ */
 
 :root {
@@ -29,7 +29,38 @@
   --gc-font-display: "Poppins", "Nunito", system-ui, sans-serif;
 }
 
-/* Hide default Discourse elements on custom homepage */
+/* ─── HIDE DEFAULT DISCOURSE HEADER ─────────────────────────────────────────
+   We hide the stock header globally so the custom sidebar takes full control.
+   The .gasing-sidebar plugin replaces all navigation & profile chrome.
+   ─────────────────────────────────────────────────────────────────────────── */
+#site-header,
+.d-header,
+.d-header-wrap {
+  display: none !important;
+}
+
+/* Compensate: remove the top-padding that Discourse normally adds for the header */
+#main-outlet-wrapper,
+#main-outlet,
+.wrap {
+  padding-top: 0 !important;
+  margin-top: 0 !important;
+}
+
+/* Hide default Discourse sidebar (we replace it) */
+#d-sidebar,
+.sidebar-wrapper,
+.sidebar-container {
+  display: none !important;
+}
+
+/* Remove padding Discourse applies when its own sidebar is active */
+body.has-sidebar-page .wrap,
+body.sidebar-animate .wrap {
+  padding-left: 0 !important;
+}
+
+/* ─── Custom homepage outlet padding reset ───────────────────────────────── */
 .custom-homepage #main-outlet-wrapper {
   padding-top: 0;
 }
@@ -191,15 +222,26 @@
   color: #fff !important;
 }
 
+.gc-btn--success:hover {
+  background: #15803d;
+  color: #fff !important;
+}
+
 .gc-btn--outline {
   background: rgba(255, 255, 255, 0.9);
   color: var(--gc-gray-900) !important;
   border: 1.5px solid var(--gc-gray-200);
 }
 
+.gc-btn--outline:hover {
+  background: #fff;
+  color: var(--gc-gray-900) !important;
+}
+
 .gc-btn--sm {
-  padding: 6px 16px;
+  padding: 6px 14px;
   font-size: 12px;
+  gap: 4px;
 }
 
 .gc-btn--game {
@@ -463,6 +505,8 @@
   overflow: hidden;
   position: relative;
   min-height: 180px;
+  display: flex;
+  flex-direction: column;
 }
 
 .gc-meetup__event-img {
@@ -475,6 +519,11 @@
   left: 0;
 }
 
+.gc-meetup__event-img--alt {
+  background: linear-gradient(135deg, #f59e0b, #d97706);
+}
+
+/* Button di pojok kanan atas card meetup */
 .gc-meetup__event-overlay {
   position: absolute;
   top: 12px;
@@ -490,6 +539,7 @@
   left: 0;
   right: 0;
   color: #fff;
+  z-index: 2;
 }
 
 .gc-meetup__event-info h3 {

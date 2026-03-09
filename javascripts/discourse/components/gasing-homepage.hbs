@@ -18,8 +18,21 @@
       </div>
     </div>
     <div class="gc-hero__mascots">
-      <img src="/theme-uploads/mascot_creativity" alt="Maskot Creativity" class="gc-hero__mascot-img gc-hero__mascot-creativity" />
-      <img src="/theme-uploads/mascot_logic" alt="Maskot Logic" class="gc-hero__mascot-img gc-hero__mascot-logic" />
+      {{!-- Use this.mascotCreativityUrl which resolves via __theme_upload_url --}}
+      {{#if this.mascotCreativityUrl}}
+        <img
+          src={{this.mascotCreativityUrl}}
+          alt="Maskot Creativity"
+          class="gc-hero__mascot-img gc-hero__mascot-creativity"
+        />
+      {{/if}}
+      {{#if this.mascotLogicUrl}}
+        <img
+          src={{this.mascotLogicUrl}}
+          alt="Maskot Logic"
+          class="gc-hero__mascot-img gc-hero__mascot-logic"
+        />
+      {{/if}}
     </div>
   </section>
 
@@ -161,7 +174,10 @@
           <div class="gc-meetup__event">
             <div class="gc-meetup__event-img"></div>
             <div class="gc-meetup__event-overlay">
-              <span class="gc-btn gc-btn--success gc-btn--sm">Saya ikut</span>
+              {{!-- button posisi top-right di atas card --}}
+              <a href="/t/qa-challenge" class="gc-btn gc-btn--success gc-btn--sm">Saya ikut
+                <svg width="12" height="12" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2.5"><polyline points="6 9 12 15 18 9"></polyline></svg>
+              </a>
             </div>
             <div class="gc-meetup__event-info">
               <h3>Q&amp;A Challenge</h3>
@@ -169,9 +185,11 @@
             </div>
           </div>
           <div class="gc-meetup__event">
-            <div class="gc-meetup__event-img"></div>
+            <div class="gc-meetup__event-img gc-meetup__event-img--alt"></div>
             <div class="gc-meetup__event-overlay">
-              <span class="gc-btn gc-btn--outline gc-btn--sm">Daftar</span>
+              <a href="/t/townhall-feb-2026" class="gc-btn gc-btn--outline gc-btn--sm">Daftar
+                <svg width="12" height="12" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2.5"><polyline points="6 9 12 15 18 9"></polyline></svg>
+              </a>
             </div>
             <div class="gc-meetup__event-info">
               <h3>Townhall Feb 2026</h3>
@@ -213,6 +231,13 @@
                 <span class="gc-news__date">20 Februari 2026 · 5-min read</span>
               </div>
             </div>
+            <div class="gc-news__item">
+              <div class="gc-news__thumb"></div>
+              <div class="gc-news__content">
+                <h3 class="gc-news__title">Murid GIP 2026 Mulai Berlatih Untuk Olimpiade Matematika</h3>
+                <span class="gc-news__date">20 Februari 2026 · 5-min read</span>
+              </div>
+            </div>
           {{/each}}
         </div>
       </section>
@@ -220,7 +245,13 @@
       {{!-- MINI GAME --}}
       <section class="gc-card gc-minigame">
         <div class="gc-minigame__illustration">
-          <img src="/theme-uploads/mascot_communication" alt="Maskot Communication" class="gc-minigame__mascot" />
+          {{#if this.mascotCommunicationUrl}}
+            <img
+              src={{this.mascotCommunicationUrl}}
+              alt="Maskot Communication"
+              class="gc-minigame__mascot"
+            />
+          {{/if}}
         </div>
         <div class="gc-minigame__content">
           <span class="gc-tag gc-tag--green">Computational Logic</span>
