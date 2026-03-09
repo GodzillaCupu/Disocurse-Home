@@ -176,13 +176,13 @@ body.sidebar-animate .wrap {
 /* ============================= */
 
 .gc-hero__mascot-creativity {
-  width: 190px;
-  height: auto;
+  width: 243px;
+  height: 276px;
 
-  right: 120px;
-  top: -25px;
+  right: 150px;
+  top: 61px;
 
-  transform: rotate(6deg);
+  aspect-ratio: 81/92;
   z-index: 2;
 }
 
@@ -192,13 +192,14 @@ body.sidebar-animate .wrap {
 /* ============================= */
 
 .gc-hero__mascot-logic {
-  width: 110px;
-  height: auto;
+  width: 168.679px;
+  height: 179px;
 
   right: 60px;
   bottom: -15px;
 
-  transform: rotate(-10deg);
+  transform: rotate(13.633deg);
+  aspect-ratio: 49/52;
   z-index: 1;
 }
 
@@ -208,13 +209,13 @@ body.sidebar-animate .wrap {
 /* ============================= */
 
 .gc-hero__mascot-communication {
-  width: 170px;
-  height: auto;
+  width: 384px;
+  height: 333px;
 
   right: -10px;
   top: -10px;
 
-  transform: rotate(-4deg);
+  aspect-ratio: 113/98;
   z-index: 3;
 }
 
