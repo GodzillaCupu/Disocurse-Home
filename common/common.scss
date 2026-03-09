@@ -156,39 +156,63 @@ body.sidebar-animate .wrap {
 .gc-hero__mascots {
   position: relative;
   flex-shrink: 0;
-  width: 280px;
-  height: 200px;
+  width: 320px;
+  height: 220px;
   z-index: 1;
 }
 
+/* Base style semua maskot */
 .gc-hero__mascot-img {
   position: absolute;
   object-fit: contain;
-  filter: drop-shadow(0 4px 12px rgba(0, 0, 0, 0.15));
+  filter: drop-shadow(0 6px 16px rgba(0, 0, 0, 0.18));
   pointer-events: none;
+  transition: transform 0.3s ease;
 }
 
-/* Maskot Creativity (ungu) - besar, posisi utama di kiri */
+/* ============================= */
+/* Maskot Creativity (ungu) */
+/* besar, posisi utama kiri */
+/* ============================= */
+
 .gc-hero__mascot-creativity {
-  width: 120px;
+  width: 190px;
+  height: auto;
 
-  transform: rotate(-8deg);
-  margin-right: -20px;
-  z-index: 1;
-}
-
-/* Maskot Logic (biru berkacamata) - kecil, mengintip dari bawah tengah */
-.gc-hero__mascot-logic {
-  width: 90px;
+  right: 120px;
+  top: -25px;
 
   transform: rotate(6deg);
-  margin-right: -10px;
   z-index: 2;
 }
 
-/* Maskot Comunnication (coklat dan roll rambut) - besar, posisi utama kanan*/
+/* ============================= */
+/* Maskot Logic (biru) */
+/* kecil, muncul dari bawah */
+/* ============================= */
+
+.gc-hero__mascot-logic {
+  width: 110px;
+  height: auto;
+
+  right: 60px;
+  bottom: -15px;
+
+  transform: rotate(-10deg);
+  z-index: 1;
+}
+
+/* ============================= */
+/* Maskot Communication (coklat) */
+/* besar di paling kanan */
+/* ============================= */
+
 .gc-hero__mascot-communication {
   width: 170px;
+  height: auto;
+
+  right: -10px;
+  top: -10px;
 
   transform: rotate(-4deg);
   z-index: 3;
