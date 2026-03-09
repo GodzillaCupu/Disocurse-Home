@@ -168,42 +168,30 @@ body.sidebar-animate .wrap {
   pointer-events: none;
 }
 
-/* Maskot Creativity (ungu) - besar, posisi utama di kanan */
+/* Maskot Creativity (ungu) - besar, posisi utama di kiri */
 .gc-hero__mascot-creativity {
-  width: 220px;
-  height: auto;
-  right: -20px;
-  top: -30px;
-  transform: rotate(5deg);
+  width: 120px;
+
+  transform: rotate(-8deg);
+  margin-right: -20px;
+  z-index: 1;
+}
+
+/* Maskot Logic (biru berkacamata) - kecil, mengintip dari bawah tengah */
+.gc-hero__mascot-logic {
+  width: 90px;
+
+  transform: rotate(6deg);
+  margin-right: -10px;
   z-index: 2;
 }
 
-/* Maskot Logic (biru berkacamata) - kecil, mengintip dari bawah */
-.gc-hero__mascot-logic {
-  width: 120px;
-  height: auto;
-  left: -10px;
-  bottom: -10px;
-  transform: rotate(-8deg);
-  z-index: 1;
-}
-
+/* Maskot Comunnication (coklat dan roll rambut) - besar, posisi utama kanan*/
 .gc-hero__mascot-communication {
-  width: 120px;
-  height: auto;
-  left: 10px;
-  bottom: -10px;
-  transform: rotate(8deg);
-  z-index: 1;
-}
+  width: 170px;
 
-.gc-hero__mascot-logic {
-  width: 120px;
-  height: auto;
-  left: -10px;
-  bottom: -10px;
-  transform: rotate(-8deg);
-  z-index: 1;
+  transform: rotate(-4deg);
+  z-index: 3;
 }
 
 /* ===== BUTTONS ===== */
