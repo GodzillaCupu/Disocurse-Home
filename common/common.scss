@@ -533,7 +533,7 @@ body.sidebar-animate .wrap {
 
 .gc-meetup__event-info {
   padding: 10px 12px;
-  background: linear-gradient(to top, rgba(0,0,0,0.8), rgba(0,0,0,0.0));
+  background: linear-gradient(to top, rgba(0, 0, 0, 0.8), rgba(0, 0, 0, 0));
   position: absolute;
   bottom: 0;
   left: 0;
@@ -684,7 +684,9 @@ body.sidebar-animate .wrap {
 }
 
 @keyframes gc-spin {
-  to { transform: rotate(360deg); }
+  to {
+    transform: rotate(360deg);
+  }
 }
 
 /* ===== RESPONSIVE ===== */
@@ -715,6 +717,11 @@ body.sidebar-animate .wrap {
     top: -10px;
   }
   .gc-hero__mascot-logic {
+    width: 90px;
+    left: 0;
+    bottom: 0;
+  }
+  .gc-hero__mascot-communication {
     width: 90px;
     left: 0;
     bottom: 0;

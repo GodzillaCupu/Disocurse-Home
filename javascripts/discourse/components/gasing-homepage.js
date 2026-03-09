@@ -116,7 +116,7 @@ export default class GasingHomepage extends Component {
         trendingRes.value?.topic_list?.topics
       ) {
         this.trendingTopics = this.mapTopics(
-          trendingRes.value.topic_list.topics.slice(0, 5)
+          trendingRes.value.topic_list.topics.slice(0, 5),
         );
       }
 
@@ -125,7 +125,7 @@ export default class GasingHomepage extends Component {
         latestRes.value?.topic_list?.topics
       ) {
         this.latestTopics = this.mapTopics(
-          latestRes.value.topic_list.topics.slice(0, 5)
+          latestRes.value.topic_list.topics.slice(0, 5),
         );
       }
 
@@ -134,12 +134,9 @@ export default class GasingHomepage extends Component {
         ajax("/c/materi-gasing/l/latest.json?per_page=5"),
       ]);
 
-      if (
-        newsRes.status === "fulfilled" &&
-        newsRes.value?.topic_list?.topics
-      ) {
+      if (newsRes.status === "fulfilled" && newsRes.value?.topic_list?.topics) {
         this.newsTopics = this.mapTopics(
-          newsRes.value.topic_list.topics.slice(0, 3)
+          newsRes.value.topic_list.topics.slice(0, 3),
         );
       }
 
@@ -148,7 +145,7 @@ export default class GasingHomepage extends Component {
         materiRes.value?.topic_list?.topics
       ) {
         this.materiTopics = this.mapTopics(
-          materiRes.value.topic_list.topics.slice(0, 5)
+          materiRes.value.topic_list.topics.slice(0, 5),
         );
       }
     } catch (e) {
