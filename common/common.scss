@@ -31,7 +31,6 @@
 
 /* ─── HIDE DEFAULT DISCOURSE HEADER ─────────────────────────────────────────
    We hide the stock header globally so the custom sidebar takes full control.
-   The .gasing-sidebar plugin replaces all navigation & profile chrome.
    ─────────────────────────────────────────────────────────────────────────── */
 #site-header,
 .d-header,
@@ -39,42 +38,72 @@
   display: none !important;
 }
 
-/* Compensate: remove the top-padding that Discourse normally adds for the header */
-#main-outlet-wrapper,
-#main-outlet,
-.wrap {
-  padding-top: 0 !important;
-  margin-top: 0 !important;
-}
-
-/* Hide default Discourse sidebar (we replace it) */
+/* ─── KILL DISCOURSE BUILT-IN SIDEBAR COMPLETELY ────────────────────────────
+   Discourse adds its sidebar via multiple possible class names depending on
+   the version. We target all of them to ensure it is fully removed.
+   ─────────────────────────────────────────────────────────────────────────── */
 #d-sidebar,
 .sidebar-wrapper,
-.sidebar-container {
+.sidebar-container,
+.d-sidebar,
+[class*="sidebar"],
+.sidebar {
   display: none !important;
+  width: 0 !important;
+  min-width: 0 !important;
 }
 
-/* Remove padding Discourse applies when its own sidebar is active */
-body.has-sidebar-page .wrap,
-body.sidebar-animate .wrap {
+/* ─── RESET ALL LAYOUT OFFSETS DISCOURSE APPLIES ────────────────────────────
+   When Discourse sidebar is present/hidden, it still applies padding/margin
+   to these wrappers via body classes. We override ALL of them here.
+   ─────────────────────────────────────────────────────────────────────────── */
+
+/* Reset body — our custom gs-sidebar plugin adds padding-left via body class */
+html,
+body {
   padding-left: 0 !important;
+  margin-left: 0 !important;
+}
+
+/* Reset every Discourse layout wrapper */
+#main-outlet-wrapper,
+#main-outlet,
+.wrap,
+.contents,
+.container,
+.ember-view > .wrap,
+.ember-view > #main-outlet-wrapper {
+  padding-top: 0 !important;
+  margin-top: 0 !important;
+  padding-left: 0 !important;
+  margin-left: 0 !important;
+  max-width: 100% !important;
+  width: 100% !important;
+}
+
+/* Body classes Discourse adds when its sidebar is active */
+body.has-sidebar-page .wrap,
+body.has-sidebar-page #main-outlet-wrapper,
+body.has-sidebar-page #main-outlet,
+body.sidebar-animate .wrap,
+body.sidebar-animate #main-outlet-wrapper,
+body[class*="sidebar"] .wrap,
+body[class*="sidebar"] #main-outlet-wrapper {
+  padding-left: 0 !important;
+  margin-left: 0 !important;
 }
 
 /* ─── Custom homepage outlet padding reset ───────────────────────────────── */
 .custom-homepage #main-outlet-wrapper {
-  padding-top: 0;
+  padding-top: 0 !important;
 }
 
 /* ===== BASE =====
-   The sidebar (220px expanded / 64px collapsed) is a fixed element.
-   We center the page content within the remaining viewport space by using
-   auto margins AFTER accounting for the sidebar offset.
-   We do this via a wrapper that uses padding-left equal to the sidebar width,
-   letting margin: auto do the centering naturally inside it.
+   Our custom gs-sidebar sets padding-left on body via body.gs-collapsed / default.
+   The gc-homepage wrapper then uses margin: auto to center itself in that space.
 */
 .gc-homepage {
   font-family: var(--gc-font);
-  /* Center within available space (whole page minus sidebar handled by body padding from sidebar plugin) */
   max-width: 1100px;
   width: 100%;
   margin: 0 auto;
