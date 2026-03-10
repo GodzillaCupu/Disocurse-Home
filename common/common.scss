@@ -65,12 +65,20 @@ body.sidebar-animate .wrap {
   padding-top: 0;
 }
 
-/* ===== BASE ===== */
+/* ===== BASE =====
+   The sidebar (220px expanded / 64px collapsed) is a fixed element.
+   We center the page content within the remaining viewport space by using
+   auto margins AFTER accounting for the sidebar offset.
+   We do this via a wrapper that uses padding-left equal to the sidebar width,
+   letting margin: auto do the centering naturally inside it.
+*/
 .gc-homepage {
   font-family: var(--gc-font);
-  max-width: 1200px;
+  /* Center within available space (whole page minus sidebar handled by body padding from sidebar plugin) */
+  max-width: 1100px;
+  width: 100%;
   margin: 0 auto;
-  padding: 0 20px 40px;
+  padding: 24px 24px 40px;
   color: var(--gc-gray-900);
   box-sizing: border-box;
 }
@@ -83,40 +91,27 @@ body.sidebar-animate .wrap {
 
 /* ===== HERO BANNER ===== */
 .gc-hero {
-  background: var(--gc-blue-gradient);
-  border-radius: var(--gc-radius);
-  padding: 32px 40px;
+  /* Fallback gradient if image hasn't loaded yet */
+  background-color: #2563eb;
+  background-size: cover;
+  background-position: center top;
+  background-repeat: no-repeat;
+  /* No border-radius — the image itself has the curved bottom */
+  border-radius: 20px;
+  padding: 40px 48px 80px; /* extra bottom padding for the curve cutout */
   margin-bottom: 24px;
   display: flex;
-  align-items: center;
+  align-items: flex-start;
   justify-content: space-between;
   position: relative;
-  overflow: hidden;
-  min-height: 180px;
+  overflow: visible; /* allow mascots to overflow slightly */
+  min-height: 220px;
 }
 
-.gc-hero::before {
-  content: "";
-  position: absolute;
-  top: -30%;
-  right: -5%;
-  width: 300px;
-  height: 300px;
-  background: rgba(255, 255, 255, 0.08);
-  border-radius: 50%;
-  pointer-events: none;
-}
-
+/* Remove old pseudo-element decorations — the image handles the look */
+.gc-hero::before,
 .gc-hero::after {
-  content: "";
-  position: absolute;
-  bottom: -40%;
-  right: 15%;
-  width: 200px;
-  height: 200px;
-  background: rgba(255, 255, 255, 0.05);
-  border-radius: 50%;
-  pointer-events: none;
+  display: none;
 }
 
 .gc-hero__content {
@@ -156,67 +151,36 @@ body.sidebar-animate .wrap {
 .gc-hero__mascots {
   position: relative;
   flex-shrink: 0;
-  width: 320px;
-  height: 220px;
+  width: 280px;
+  height: 200px;
   z-index: 1;
 }
 
-/* Base style semua maskot */
 .gc-hero__mascot-img {
   position: absolute;
   object-fit: contain;
-  filter: drop-shadow(0 6px 16px rgba(0, 0, 0, 0.18));
+  filter: drop-shadow(0 4px 12px rgba(0, 0, 0, 0.15));
   pointer-events: none;
-  transition: transform 0.3s ease;
 }
 
-/* ============================= */
-/* Maskot Creativity (ungu) */
-/* besar, posisi utama kiri */
-/* ============================= */
-
+/* Maskot Creativity (ungu) - besar, posisi utama di kanan */
 .gc-hero__mascot-creativity {
-  width: 243px;
-  height: 276px;
-
-  right: 150px;
-  top: 61px;
-
-  aspect-ratio: 81/92;
+  width: 220px;
+  height: auto;
+  right: -20px;
+  top: -30px;
+  transform: rotate(5deg);
   z-index: 2;
 }
 
-/* ============================= */
-/* Maskot Logic (biru) */
-/* kecil, muncul dari bawah */
-/* ============================= */
-
+/* Maskot Logic (biru berkacamata) - kecil, mengintip dari bawah */
 .gc-hero__mascot-logic {
-  width: 168.679px;
-  height: 179px;
-
-  right: 60px;
-  bottom: -15px;
-
-  transform: rotate(13.633deg);
-  aspect-ratio: 49/52;
+  width: 120px;
+  height: auto;
+  left: -10px;
+  bottom: -10px;
+  transform: rotate(-8deg);
   z-index: 1;
-}
-
-/* ============================= */
-/* Maskot Communication (coklat) */
-/* besar di paling kanan */
-/* ============================= */
-
-.gc-hero__mascot-communication {
-  width: 384px;
-  height: 333px;
-
-  right: -10px;
-  top: -10px;
-
-  aspect-ratio: 113/98;
-  z-index: 3;
 }
 
 /* ===== BUTTONS ===== */
@@ -564,7 +528,7 @@ body.sidebar-animate .wrap {
 
 .gc-meetup__event-info {
   padding: 10px 12px;
-  background: linear-gradient(to top, rgba(0, 0, 0, 0.8), rgba(0, 0, 0, 0));
+  background: linear-gradient(to top, rgba(0,0,0,0.8), rgba(0,0,0,0.0));
   position: absolute;
   bottom: 0;
   left: 0;
@@ -715,9 +679,7 @@ body.sidebar-animate .wrap {
 }
 
 @keyframes gc-spin {
-  to {
-    transform: rotate(360deg);
-  }
+  to { transform: rotate(360deg); }
 }
 
 /* ===== RESPONSIVE ===== */
@@ -748,11 +710,6 @@ body.sidebar-animate .wrap {
     top: -10px;
   }
   .gc-hero__mascot-logic {
-    width: 90px;
-    left: 0;
-    bottom: 0;
-  }
-  .gc-hero__mascot-communication {
     width: 90px;
     left: 0;
     bottom: 0;

@@ -7,7 +7,8 @@
   "assets": {
     "mascot_logic": "assets/mascot-logic.svg",
     "mascot_communication": "assets/mascot-communication.svg",
-    "mascot_creativity": "assets/mascot-creativity.svg"
+    "mascot_creativity": "assets/mascot-creativity.svg",
+    "hero_bg": "assets/hero-bg.png"
   },
   "modifiers": {
     "custom_homepage": true
