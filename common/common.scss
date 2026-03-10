@@ -90,29 +90,29 @@ body.sidebar-animate .wrap {
 }
 
 /* ===== HERO BANNER ===== */
-.gc-hero {
-  /* Fallback gradient if image hasn't loaded yet */
-  background-color: #2563eb;
-  background-size: cover;
-  background-position: center top;
-  background-repeat: no-repeat;
-  /* No border-radius — the image itself has the curved bottom */
-  border-radius: 20px;
-  padding: 40px 48px 80px; /* extra bottom padding for the curve cutout */
-  margin-bottom: 24px;
-  display: flex;
-  align-items: flex-start;
-  justify-content: space-between;
-  position: relative;
-  overflow: visible; /* allow mascots to overflow slightly */
-  min-height: 220px;
-}
+// .gc-hero {
+//   /* Fallback gradient if image hasn't loaded yet */
+//   background-color: #2563eb;
+//   background-size: cover;
+//   background-position: center top;
+//   background-repeat: no-repeat;
+//   /* No border-radius — the image itself has the curved bottom */
+//   border-radius: 20px;
+//   padding: 40px 48px 80px; /* extra bottom padding for the curve cutout */
+//   margin-bottom: 24px;
+//   display: flex;
+//   align-items: flex-start;
+//   justify-content: space-between;
+//   position: relative;
+//   overflow: visible; /* allow mascots to overflow slightly */
+//   min-height: 220px;
+// }
 
-/* Remove old pseudo-element decorations — the image handles the look */
-.gc-hero::before,
-.gc-hero::after {
-  display: none;
-}
+// /* Remove old pseudo-element decorations — the image handles the look */
+// .gc-hero::before,
+// .gc-hero::after {
+//   display: none;
+// }
 
 .gc-hero__content {
   flex: 1;
