@@ -42,15 +42,10 @@
 
 // Menghapus padding atas bawaan Discourse agar hero banner naik ke paling atas
 #main-outlet-wrapper {
-  background: transparent !important;
   padding-top: 0 !important;
 }
 
 #main-outlet {
-  background: transparent !important;
-  background-color: transparent !important;
-  box-shadow: none !important;
-  border: none !important;
   padding-top: 0 !important;
 }
 
@@ -68,9 +63,6 @@
 
 /* ===== HERO BANNER ===== */
 .gc-hero {
-  background: transparent !important;
-  box-shadow: none !important;
-  border: none !important;
   padding: 32px 40px;
   margin-bottom: 24px;
   display: flex;
@@ -79,6 +71,8 @@
   position: relative;
   overflow: hidden;
   min-height: 180px;
+  /* No border-radius — flush with page edges */
+  border-radius: 0;
 }
 
 .gc-hero::before {
@@ -90,7 +84,6 @@
   height: 300px;
   background: rgba(255, 255, 255, 0.08);
   border-radius: 50%;
-  display: none !important;
 }
 
 .gc-hero::after {
@@ -102,7 +95,6 @@
   height: 200px;
   background: rgba(255, 255, 255, 0.05);
   border-radius: 50%;
-  display: none !important;
 }
 
 .gc-hero__content {

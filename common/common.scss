@@ -65,6 +65,17 @@ body.sidebar-animate .wrap {
   padding-top: 0;
 }
 
+/* ─── Remove white page background, use gray instead ────────────────────── */
+#main-outlet-wrapper,
+.custom-homepage-wrapper {
+  background: var(--gc-gray-100) !important;
+  background-color: var(--gc-gray-100) !important;
+}
+
+body.custom-homepage {
+  background: var(--gc-gray-100) !important;
+}
+
 /* ===== BASE =====
    The sidebar (220px expanded / 64px collapsed) is a fixed element.
    We center the page content within the remaining viewport space by using
@@ -78,7 +89,7 @@ body.sidebar-animate .wrap {
   max-width: 1100px;
   width: 100%;
   margin: 0 auto;
-  padding: 24px 24px 40px;
+  padding: 0 0 40px; /* no top padding — hero sits flush at top */
   color: var(--gc-gray-900);
   box-sizing: border-box;
 }
@@ -96,8 +107,8 @@ body.sidebar-animate .wrap {
   background-size: cover;
   background-position: center top;
   background-repeat: no-repeat;
-  /* No border-radius — the image itself has the curved bottom */
-  border-radius: 20px;
+  /* No border-radius — flush with page edges */
+  border-radius: 0;
   padding: 40px 48px 80px; /* extra bottom padding for the curve cutout */
   margin-bottom: 24px;
   display: flex;
@@ -259,6 +270,7 @@ body.sidebar-animate .wrap {
   display: grid;
   grid-template-columns: 1fr 1fr;
   gap: 24px;
+  padding: 0 24px; /* side padding for cards, since hero is full-width */
 }
 
 .gc-grid__left,
