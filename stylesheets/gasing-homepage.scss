@@ -42,10 +42,15 @@
 
 // Menghapus padding atas bawaan Discourse agar hero banner naik ke paling atas
 #main-outlet-wrapper {
+  background: transparent !important;
   padding-top: 0 !important;
 }
 
 #main-outlet {
+  background: transparent !important;
+  background-color: transparent !important;
+  box-shadow: none !important;
+  border: none !important;
   padding-top: 0 !important;
 }
 
@@ -63,6 +68,9 @@
 
 /* ===== HERO BANNER ===== */
 .gc-hero {
+  background: transparent !important;
+  box-shadow: none !important;
+  border: none !important;
   padding: 32px 40px;
   margin-bottom: 24px;
   display: flex;
