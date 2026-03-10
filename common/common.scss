@@ -68,12 +68,12 @@ body.sidebar-animate .wrap {
 /* ─── Remove white page background, use gray instead ────────────────────── */
 #main-outlet-wrapper,
 .custom-homepage-wrapper {
-  background: var(--gc-gray-100) !important;
-  background-color: var(--gc-gray-100) !important;
+  background: transparent !important;
+  background-color: transparent !important;
 }
 
 body.custom-homepage {
-  background: var(--gc-gray-100) !important;
+  background: transparent !important;
 }
 
 /* ===== BASE =====
@@ -89,8 +89,8 @@ body.custom-homepage {
   max-width: 1100px;
   width: 100%;
   margin: 0 auto;
-  padding: 0 0 40px; /* no top padding — hero sits flush at top */
-  color: var(--gc-gray-900);
+  padding: 24px 24px 40px;
+  color: transparent;
   box-sizing: border-box;
 }
 
@@ -107,8 +107,7 @@ body.custom-homepage {
   background-size: cover;
   background-position: center top;
   background-repeat: no-repeat;
-  /* No border-radius — flush with page edges */
-  border-radius: 0;
+  border-radius: 20px;
   padding: 40px 48px 80px; /* extra bottom padding for the curve cutout */
   margin-bottom: 24px;
   display: flex;
