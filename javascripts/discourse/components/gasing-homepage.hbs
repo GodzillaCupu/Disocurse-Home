@@ -14,15 +14,15 @@
   >
     <div class="gc-hero__content">
       <h1 class="gc-hero__greeting">
-        Selamat Datang{{#if this.isLoggedIn}}, {{this.displayName}}{{/if}}!
+        {{this.settings.hero_greeting}}{{#if this.isLoggedIn}},
+          {{this.displayName}}{{/if}}!
       </h1>
       <p class="gc-hero__cta-text">
-        Apa kamu mau daftar menjadi Trainer di pelatihan Gasing tanggal 5-20
-        Maret 2026?
+        {{this.settings.hero_cta_text}}
       </p>
       <div class="gc-hero__cta-actions">
-        <a href="/t/pendaftaran-trainer" class="gc-btn gc-btn--primary">
-          Saya daftar!
+        <a href={{this.settings.hero_cta_link}} class="gc-btn gc-btn--primary">
+          {{this.settings.hero_cta_button_text}}
           <svg
             width="14"
             height="14"
@@ -32,7 +32,9 @@
             stroke-width="2.5"
           ><polyline points="6 9 12 15 18 9"></polyline></svg>
         </a>
-        <span class="gc-hero__cta-count">50 guru mendaftar</span>
+        <span
+          class="gc-hero__cta-count"
+        >{{this.settings.hero_cta_count_text}}</span>
       </div>
     </div>
     <div class="gc-hero__mascots">
